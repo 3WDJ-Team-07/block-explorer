@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Transaction = ({ match, history }) => {
+const Transactions = ({ match, history }) => {
     console.log(match);
     console.log(history);
     return (
         <div>
-            transaction page
+            Transactions page
         </div>
     );
 }
 
-export default Transaction
+export default Transactions
