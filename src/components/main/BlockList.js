@@ -13,6 +13,7 @@ import BlockItem from './BlockItem';
 
 class BlockList extends Component {
     render() {
+        const { blocks } = this.props;
         return (
             <Grid.Column>
                 <Segment style={{ height: "600px", overflow: 'scroll' }}>
@@ -24,7 +25,10 @@ class BlockList extends Component {
                         <Header.Content><Link to='/blocks' style={{ fontSize: '1.25rem' }}>더보기</Link></Header.Content>
                     </Header>
                     <List animated celled verticalAlign='middle' size="big" style={{ marginTop: '3.5rem' }}>
-                        <BlockItem />
+                        {blocks.map((block, i) => {
+                            console.log(block);
+                            return (<BlockItem block={block} />)
+                        })}
                     </List>
                 </Segment>
             </Grid.Column>

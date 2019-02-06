@@ -3,6 +3,7 @@ import { Container, Statistic, Icon } from 'semantic-ui-react';
 
 class Status extends Component {
     render() {
+        const { blockCount, txCount } = this.props;
         return (
             <div>
                 <Container textAlign="center" style={{ marginTop: '9em' }}>
@@ -10,16 +11,16 @@ class Status extends Component {
                 </Container>
                 <Container textAlign="center" style={{ marginTop: '2em' }}>
                     <Statistic color='olive'>
-                        <Statistic.Value>22123</Statistic.Value>
-                        <Statistic.Label>Blocks</Statistic.Label>
+                        <Statistic.Value>{blockCount}</Statistic.Value>
+                        <Statistic.Label>블록</Statistic.Label>
                     </Statistic>
                     <Statistic color='olive'>
-                        <Statistic.Value>31,200</Statistic.Value>
-                        <Statistic.Label>Transactions</Statistic.Label>
+                        <Statistic.Value>{txCount}</Statistic.Value>
+                        <Statistic.Label>거래</Statistic.Label>
                     </Statistic>
                     <Statistic color='olive'>
-                        <Statistic.Value>22</Statistic.Value>
-                        <Statistic.Label>Members</Statistic.Label>
+                        <Statistic.Value>6</Statistic.Value>
+                        <Statistic.Label>맴버</Statistic.Label>
                     </Statistic>
                 </Container>
             </div>

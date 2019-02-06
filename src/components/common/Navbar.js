@@ -18,7 +18,7 @@ class Navbar extends Component {
                 <Menu fixed='top' color='olive' inverted pointing >
                     <Container>
                         <Menu.Item as='a' href='/' header>
-                            <Image alt='logo' size='tiny' src='/asd.png' style={{ marginRight: '1.5em' }} />
+                            <Image alt='logo' size='tiny' src='/ino-survey.png' style={{ marginRight: '1.5em' }} />
                         </Menu.Item>
                         <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}><Link to='/'>Home</Link></Menu.Item>
                         <Menu.Item name='block' active={activeItem === 'block'} onClick={this.handleItemClick}><Link to='/blocks'>Block</Link></Menu.Item>
