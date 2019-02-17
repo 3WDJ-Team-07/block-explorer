@@ -10,7 +10,7 @@ import {
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { Status, BlockList } from '../components/main';
-import { web3 } from '../lib';
+import { EthInterface } from '../lib';
 
 
 class Main extends Component {
@@ -22,35 +22,38 @@ class Main extends Component {
         curr_block_no: 0,
     }
     componentWillMount = () => {
-        this._getCurtentBlockNumber().then(curr_num => {
-            this.setState({
-                curr_block_no: curr_num
-            })
-        });
-        this._getRecentBlockList().then(list => {
-            this.setState({
-                recent_blocks: list
-            })
-        });
+        // this._getCurtentBlockNumber().then(curr_num => {
+        //     this.setState({
+        //         curr_block_no: curr_num
+        //     })
+        // });
+        // this._getRecentBlockList().then(list => {
+        //     this.setState({
+        //         recent_blocks: list
+        //     })
+        // });
+        let a = new EthInterface;
+        console.log(a.test());
+        
     }
-    _getCurtentBlockNumber = async () => {
-        let curr_num = await web3.eth.getBlockNumber();
-        return curr_num;
-    }
+    // _getCurtentBlockNumber = async () => {
+    //     let curr_num = await web3.eth.getBlockNumber();
+    //     return curr_num;
+    // }
 
-    _getBlock = (number) => {
-        return web3.eth.getBlock(number);
-    }
+    // _getBlock = (number) => {
+    //     return web3.eth.getBlock(number);
+    // }
 
-    _getRecentBlockList = async () => {
-        let recent_blocks = [];
-        let curr_block_no = await this._getCurtentBlockNumber();
-        const max_blocks = 10;
-        for (let i = 0; i < max_blocks; i++) {
-            recent_blocks.push(await this._getBlock(curr_block_no - i));
-        }
-        return recent_blocks;
-    }
+    // _getRecentBlockList = async () => {
+    //     let recent_blocks = [];
+    //     let curr_block_no = await this._getCurtentBlockNumber();
+    //     const max_blocks = 10;
+    //     for (let i = 0; i < max_blocks; i++) {
+    //         recent_blocks.push(await this._getBlock(curr_block_no - i));
+    //     }
+    //     return recent_blocks;
+    // }
 
     render() {
         const { recent_blocks, curr_block_no } = this.state;
